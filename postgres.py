@@ -4,7 +4,7 @@ import psycopg2
 from psycopg2.extras import execute_values
 
 
-def config(filename='../config/desktop.ini', section='postgresql'):
+def config(filename='config/desktop.ini', section='postgresql'):
     # create a parser
     parser = ConfigParser()
     # read config file
@@ -50,4 +50,3 @@ def perform_upsert(table_name, columns, values, conflict_column):
     # values = [tuple(x) for x in df.to_numpy()]
     execute_values(cur, insert_query, values)
     conn.commit()
-    conn.close()

@@ -8,7 +8,7 @@ def process_pans(pan_column):
     return pan_column.apply(lambda x: validate_pan(x))
 
 
-df = pd.read_csv("../csvs/rta/kfintech240.csv")
+df = pd.read_csv("../data/rta/kfintech240.csv")
 print(df.columns)
 
 # Validation of PAN columns
